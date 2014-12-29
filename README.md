@@ -14,9 +14,9 @@ I made it to learn how to use:
 
 How to run
 ----------------
- - first you must build project with Maven.
- - then deploy assembled .war file on some application server.
- - and run your browser and go to localhost/index.html
+  first you must build project with Maven.
+  then deploy assembled .war file on some application server.
+  and run your browser and go to localhost/index.html
 
  I prefere Apache Tomcat servlet container, 
  because very easy to configure this framework and start to work.
