@@ -1,6 +1,8 @@
-# Phone Book - data base.
+Phone Book - data base.
+=======================
 
-## Description
+Description
+----------------
 This is my tutorial project.
 I made it to learn how to use:
 - Java SE 
@@ -9,14 +11,18 @@ I made it to learn how to use:
 - Ajax
 - Gson
 - Maven
-## How to run
- 1. You must build project with Maven.
- 2. Then deploy assembled .war file on some application server.
- 3. Run your browser and go to localhost/index.html
+
+How to run
+----------------
+ - first you must build project with Maven.
+ - then deploy assembled .war file on some application server.
+ - and run your browser and go to localhost/index.html
 
  I prefere Apache Tomcat servlet container, 
  because very easy to configure this framework and start to work.
- ## What you can
+ 
+What you can
+----------------
  Data base have next CRUD operations: 
  - add person
  - select person
@@ -31,6 +37,8 @@ I made it to learn how to use:
 
  Unfortunately, if client didn't commit before undeploy .war file,
  changes after last commit will not save.
- ## Propositions
+ 
+Propositions
+----------------
  If you have some offer to change code,
  or to add some feature, please contact me.
