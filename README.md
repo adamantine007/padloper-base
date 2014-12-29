@@ -30,7 +30,7 @@ Data base have next CRUD operations:
 
 Comunication with DB based on Java Servlets + Ajax.
 
-A client have 4 section on one HTML page: add, select, delete personand commit DB. When client commit DB, all data convert to JSON format and stored in the **data.json** file.
+A client have 4 section on one HTML page: add, select, delete person and commit DB. When client commit DB, all data convert to JSON format and stored in the **data.json** file.
 
 Unfortunately, if client didn't commit before undeploy `.war` file, changes after last commit will not save.
  
