@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>'Phone Book' DB</title>
+        <script src="js/main.js"></script>
+    </head>
+<body>
+
+    <hr/>
+    <hr/>
+    <h4>Enter info about person to add him:</h4>
+    <p id="addPersonArea">
+        ID : <input type="text" size="25" id="id"/><br/>
+        First name : <input type="text" size="25" id="firstName"/><br/>
+        Second name : <input type="text" size="25" id="secondName"/><br/>
+        Phone number: <input type="text" size="25" id="number"/><br/>
+        <input type="button" onclick="addPersonToDB()" value="Add"/>
+        <p id="reportPlaceAdd"><br/></p>
+    </p>
+
+    <hr/>
+    <hr/>
+    <h4>Select person from DB by ID:</h4>
+    <p id="selectPersonArea">
+        ID : <input type="text" size="25" id="selectId"/><br/>
+        <input type="button" onclick="selectPersonFromDB()" value="Select"/>
+        <p id="reportPlaceSelect"><br/></p>
+    </p>
+
+    <hr/>
+    <hr/>
+    <h4>Remove person from DB by ID:</h4>
+    <p id="removePersonArea">
+        ID : <input type="text" size="25" id="removeId"/><br/>
+        <input type="button" onclick="removePersonFromDB()" value="Remove"/>
+    <p id="reportPlaceRemove"><br/></p>
+    </p>
+
+    <hr/>
+    <hr/>
+    <h4>Press button for commit DB:</h4>
+    <p id="commitPersonDBArea">
+        <input type="button" onclick="commitPersonDB()" value="Commit"/>
+        <p id="reportPlaceCommit"><br/></p>
+    </p>
+    <hr/>
+    <hr/>
+</body>
+</html>
