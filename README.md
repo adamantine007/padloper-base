@@ -10,9 +10,9 @@ I made it to learn how to use:
 - Gson
 - Maven
 ## How to run
-- first you must build project with Maven.
-- then deploy assembled .war file on some application server.
-- run your browser and go to localhost/index.html
+ 1. You must build project with Maven.
+ 2. Then deploy assembled .war file on some application server.
+ 3. Run your browser and go to localhost/index.html
 
  I prefere Apache Tomcat servlet container, 
  because very easy to configure this framework and start to work.
