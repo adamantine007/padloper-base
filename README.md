@@ -20,7 +20,7 @@ I prefere Apache Tomcat servlet container, because it is very easy to configure 
  
 What are you can?
 ----------------
-Application have next CRUD operations: 
+An application has next CRUD operations: 
 - add person
 - select person
 - update information about person
