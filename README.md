@@ -1,27 +1,26 @@
-Phone Book - data base.
+"Phone Book" - data base.
 =======================
 
 Description
 ----------------
-This is my tutorial project **Phone Book** data base. It based on Map structure. All operations working for `O(1)`.
+This is my tutorial project **Phone Book** data base with using CRUD operations. It has based on Map structure. All operations working for `O(1)`.
 
-I made it to learn how to use:
-- Java SE 
-- Java Servlet
+I have made it to learn how to use:
+- Java EE Servlets
 - Tomcat 
 - Ajax
 - Gson
 - Maven
 
-How to run
+How to run?
 ----------------
 First you must build project with Maven, then deploy assembled `.war` file on some application server, run your browser and go to `localhost/index.html`
 
 I prefere Apache Tomcat servlet container, because it is very easy to configure this framework and start to work.
  
-What you can
+What are you can?
 ----------------
-Data base have next CRUD operations: 
+Application have next CRUD operations: 
 - add person
 - select person
 - update information about person
