@@ -1,22 +1,25 @@
-"Phone Book" - data base.
+PHONE BOOK
 =======================
 
 Description
 ----------------
-This is my tutorial project **Phone Book** data base with using CRUD operations. It has based on Map structure. All operations working for `O(1)`.
+It is simple WEB application based on Servlet API and AJAX technologies. Users can save phone book records to database.
+An application provides four CRUD operation: create, read, update and delete. So, you can create record about person,
+you can read info about some person, also you can update and delete information about person from database.
+But now app realized on manual commit structure - if you want to save changes that you did, you must to commit it manual.
 
-I have made it to learn how to use:
-- Java EE Servlets
-- Tomcat 
+There are technologies that were used:
+- Servlet API
+- Jetty App Server (used embedded mode)
 - Ajax
-- Gson
+- HTML
+- Gson library
 - Maven
+Also I used `json2.js` file created by [douglascrockford](https://github.com/douglascrockford/JSON-js/blob/master/json2.js) to convert JSON string in JavaScript objects.
 
 How to run?
 ----------------
-First you must build project with Maven, then deploy assembled `.war` file on some application server, run your browser and go to `localhost/index.html`
-
-I prefere Apache Tomcat servlet container, because it is very easy to configure this framework and start to work.
+So, if you interest in running this application all what you need
  
 What are you can?
 ----------------
@@ -27,7 +30,7 @@ An application has next CRUD operations:
 - delete person
 
 
-Comunication with DB based on Java Servlets + Ajax.
+Communication with DB based on Java Servlets + Ajax.
 
 A client have 4 section on one HTML page: add, select, delete person and commit DB. When client commit DB, all data convert to JSON format and stored in the **data.json** file.
 

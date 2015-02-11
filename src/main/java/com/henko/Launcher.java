@@ -1,3 +1,5 @@
+package com.henko;
+
 import com.henko.container.JettyEmbeddedRunner;
 
 /**
