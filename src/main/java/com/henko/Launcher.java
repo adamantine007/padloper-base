@@ -11,6 +11,6 @@ import com.henko.container.JettyEmbeddedRunner;
 
 public class Launcher {
     public static void main(String[] args) throws Exception {
-        new JettyEmbeddedRunner().startServer();
+        new JettyEmbeddedRunner().startServer("localhost", 8080);
     }
 }

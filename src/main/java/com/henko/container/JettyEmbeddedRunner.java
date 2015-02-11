@@ -34,7 +34,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
  */
 
 public class JettyEmbeddedRunner {
-    public void startServer() {
+    public void startServer(String host, int port) {
         try {
             Server server = new Server();
 
@@ -42,8 +42,8 @@ public class JettyEmbeddedRunner {
             ServerConnector connector = new ServerConnector(server);
             connector.setIdleTimeout(1000);
             connector.setAcceptQueueSize(10);
-            connector.setPort(8080);
-            connector.setHost("localhost");
+            connector.setPort(port);
+            connector.setHost(host);
             server.setConnectors(new Connector[] { connector });
 
             // Handlers
