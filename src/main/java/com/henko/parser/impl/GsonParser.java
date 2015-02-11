@@ -7,8 +7,12 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.Scanner;
 
-public class GsonJsonParser implements Parser {
+public class GsonParser implements Parser {
     private static final String PATH_DATA = "./data/data.json";
+
+    public String toJson(Object obj){
+        return new Gson().toJson(obj);
+    }
 
     @Override
     public Object getObject(File file, Type type) throws IOException {
@@ -34,19 +38,6 @@ public class GsonJsonParser implements Parser {
         }
     }
 
-    private String readFileAsString(File file) throws IOException {
-        StringBuilder fileData = new StringBuilder();
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        char[] buf = new char[1024];
-        int numRead = 0;
-        while ((numRead = reader.read(buf)) != -1) {
-            String readData = String.valueOf(buf, 0, numRead);
-            fileData.append(readData);
-        }
-        reader.close();
-        return fileData.toString();
-    }
-
     private String readFile(File file) throws IOException {
         StringBuilder fileContents = new StringBuilder((int) file.length());
         Scanner scanner = new Scanner(file);
@@ -60,4 +51,6 @@ public class GsonJsonParser implements Parser {
             scanner.close();
         }
     }
+
+
 }

@@ -1,72 +1,66 @@
 <!DOCTYPE html>
 <html>
 
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>'Phone Book' DB</title>
-</head>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Phone Book</title>
+    </head>
 
-<body>
+    <body>
 
-    <div id="addPersonArea">
-        <hr/>
-        <hr/>
-        <h4>Enter info about person to add him:</h4>
-        ID :
-        <input type="text" size="25" id="id" />
-        <br/>First name :
-        <input type="text" size="25" id="firstName" />
-        <br/>Second name :
-        <input type="text" size="25" id="secondName" />
-        <br/>Phone number:
-        <input type="text" size="25" id="number" />
-        <br/>
-        <input type="button" onclick="addPersonToDB()" value="Add" />
-        <p id="reportPlaceAdd">
-            <br/>
-        </p>
-    </div>
+        <form action="/person.do" method="post" id="addForm">
+            <input type="hidden" value="add" id="addType"/>
 
-    <div id="selectPersonArea">
-        <hr/>
-        <hr/>
-        <h4>Select person from DB by ID:</h4>
-        ID :
-        <input type="text" size="25" id="selectId" />
-        <br/>
-        <input type="button" onclick="selectPersonFromDB()" value="Select" />
-        <p id="reportPlaceSelect">
-            <br/>
-        </p>
-    </div>
+            <label for="addID">ID:</label>
+            <input type="text" id="addID"/><br/>
 
-    <div id="removePersonArea">
-        <hr/>
-        <hr/>
-        <h4>Remove person from DB by ID:</h4>
-        ID :
-        <input type="text" size="25" id="removeId" />
-        <br/>
-        <input type="button" onclick="removePersonFromDB()" value="Remove" />
-        <p id="reportPlaceRemove">
-            <br/>
-        </p>
-    </div>
+            <label for="addFirstName">First name:</label>
+            <input type="text" id="addFirstName"/><br/>
 
-    <div id="commitPersonDBArea">
-        <hr/>
-        <hr/>
-        <h4>Press button for commit DB:</h4>
+            <label for="addSecondName">Second name:</label>
+            <input type="text" id="addSecondName"/><br/>
 
-        <input type="button" onclick="commitPersonDB()" value="Commit" />
-        <p id="reportPlaceCommit">
-            <br/>
-        </p>
-    </div>
-    <hr/>
-    <hr/>
+            <label for="addNumber">Phone number:</label>
+            <input type="text" id="addNumber"/><br/>
 
-    <script src="js/main.js"></script>
-</body>
+            <input type="submit" value="Create record"/>
+        </form>
+
+        <hr/>
+
+        <form action="/person.do" method="post" id="getForm">
+            <input type="hidden" value="get" id="getType"/>
+
+            <label for="getID">Get by ID:</label>
+            <input type="text" id="getID"/><br/>
+
+            <input type="submit" value="Get record"/>
+        </form>
+
+        <hr/>
+
+        <form action="/person.do" method="post" id="removeForm">
+            <input type="hidden" value="remove" id="removeType"/>
+
+            <label for="removeID">Remove by ID:</label>
+            <input type="text" id="removeID"/><br/>
+
+            <input type="submit" value="Remove record"/>
+        </form>
+
+        <hr/>
+
+        <form action="/person.do" method="post" id="commitForm">
+            <input type="hidden" value="commit" id="commitType"/>
+
+            <label for="commitSubmit">Press for commit records:</label>
+            <input type="submit" value="Commit" id="commitSubmit"/>
+        </form>
+
+
+        <script src="js/json2.js"></script>
+        <script src="js/AjaxUtil.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 
 </html>

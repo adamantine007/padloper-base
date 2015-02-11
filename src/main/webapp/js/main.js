@@ -1,81 +1,102 @@
-var xmlHttpRequest;
-if (window.XMLHttpRequest) {
-    xmlHttpRequest = new XMLHttpRequest();
-} else if (window.ActiveXObject) {
-    xmlHttpRequest = new window.ActiveXObject();
-}
+(function () {
+    /* PROCESS ADD FORM */
+    var addForm = document.getElementById("addForm");
 
-function cleanAddInputFields() {
-    document.getElementById("id").value = "";
-    document.getElementById("firstName").value = "";
-    document.getElementById("secondName").value = "";
-    document.getElementById("number").value = "";
-}
+    addForm.onsubmit = function () {
+        var url = addForm.getAttribute("action");
 
-function addPersonToDB() {
-    var requestString = "addpersoncontroller?id=" +
-        document.getElementById("id").value + "&firstName=" +
-        document.getElementById("firstName").value + "&secondName=" +
-        document.getElementById("secondName").value + "&number=" +
-        document.getElementById("number").value;
+        var type = document.getElementById("addType").value;
+        var id = document.getElementById("addID").value;
+        var firstName = document.getElementById("addFirstName").value;
+        var secondName = document.getElementById("addSecondName").value;
+        var number = document.getElementById("addNumber").value;
 
-    xmlHttpRequest.open("POST", requestString, true);
-    xmlHttpRequest.onreadystatechange = getAddReportFromServer;
-    xmlHttpRequest.send();
-    cleanAddInputFields();
-}
+        AjaxUtil.ajax(url, {
+                method: "POST",
+                data: {
+                    type: type,
+                    id: id,
+                    firstName: firstName,
+                    secondName: secondName,
+                    number: number
+                },
+                complete: function (response) {
+                    alert(response);
+                }
+            }
+        );
 
-function getAddReportFromServer() {
-    if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
-        //document.getElementById("reportPlaceAdd").innerHTML = xmlHttpRequest.responseXML.getElementsByTagName("serverResponse")[0].textContent;
-        document.getElementById("reportPlaceAdd").innerHTML = xmlHttpRequest.responseText;
+        return false;
+    };
+
+    /* PROCESS GET FORM */
+    var getForm = document.getElementById("getForm");
+
+    getForm.onsubmit = function () {
+        var url = addForm.getAttribute("action");
+
+        var type = document.getElementById("getType").value;
+        var id = document.getElementById("getID").value;
+
+        AjaxUtil.ajax(url, {
+            method: "POST",
+            data: {
+                type: type,
+                id: id
+            },
+            complete: function (response) {
+                alert(response.id + " "
+                + response.firstName + " "
+                + response.secondName + " "
+                + response.number);
+            }
+        });
+
+        return false;
+    };
+
+    /* PROCESS REMOVE FORM */
+    var removeForm = document.getElementById("removeForm");
+
+    removeForm.onsubmit = function () {
+        var url = removeForm.getAttribute("action");
+
+        var type = document.getElementById("removeType").value;
+        var id = document.getElementById("removeID").value;
+
+        AjaxUtil.ajax(url, {
+            method: "POST",
+            data: {
+                type: type,
+                id: id
+            },
+            complete: function(response) {
+                alert(response);
+            }
+        });
+
+        return false;
+    };
+
+    /* PROCESS REMOVE FORM */
+    var commitForm = document.getElementById("commitForm");
+
+    commitForm.onsubmit = function () {
+        var url = removeForm.getAttribute("action");
+
+        var type = document.getElementById("commitType").value;
+
+        AjaxUtil.ajax(url, {
+            method: "POST",
+            data: {
+                type: type
+            },
+            complete: function (response) {
+                alert(response);
+            }
+        });
+
+        return false;
     }
-}
 
-function selectPersonFromDB() {
-    var requestString = "getpersoncontroller?selectId=" +
-            document.getElementById("selectId").value;
-
-    xmlHttpRequest.open("POST", requestString, true);
-    xmlHttpRequest.onreadystatechange = getSelectReportFromServer;
-    xmlHttpRequest.send();
-    document.getElementById("selectId").value = "";
-}
-
-function getSelectReportFromServer() {
-    if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
-        //document.getElementById("reportPlaceSelect").innerHTML = xmlHttpRequest.responseXML.getElementsByTagName("serverResponse")[0].textContent;
-        document.getElementById("reportPlaceSelect").innerHTML = xmlHttpRequest.responseText;
-    }
-}
-
-function removePersonFromDB() {
-    var requestString = "removepersoncontroller?removeId=" +
-        document.getElementById("removeId").value;
-
-    xmlHttpRequest.open("POST", requestString, true);
-    xmlHttpRequest.onreadystatechange = getRemoveReportFromServer;
-    xmlHttpRequest.send();
-    document.getElementById("removeId").value = "";
-}
-
-function getRemoveReportFromServer() {
-    if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
-        //document.getElementById("reportPlaceSelect").innerHTML = xmlHttpRequest.responseXML.getElementsByTagName("serverResponse")[0].textContent;
-        document.getElementById("reportPlaceRemove").innerHTML = xmlHttpRequest.responseText;
-    }
-}
-
-
-function commitPersonDB() {
-    xmlHttpRequest.open("POST", "commitpersondbcontroller", true);
-    xmlHttpRequest.onreadystatechange = getCommitReportFromServer;
-    xmlHttpRequest.send();
-}
-
-function getCommitReportFromServer() {
-    if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
-        document.getElementById("reportPlaceCommit").innerHTML = xmlHttpRequest.responseText;
-    }
-}
-
+})();

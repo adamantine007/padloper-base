@@ -2,40 +2,18 @@ package com.henko.entity;
 
 public class Person {
     private int id;
-    private String name;
+    private String firstName;
+    private String secondName;
     private String number;
 
     public Person() {
 
     }
 
-    public Person(int id, String name, String number) {
+    public Person(int id, String firstName, String secondName, String number) {
         this.id = id;
-        this.name = name;
-        this.number = number;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
+        this.firstName = firstName;
+        this.secondName = secondName;
         this.number = number;
     }
 
@@ -43,7 +21,8 @@ public class Person {
     public String toString() {
         return "Person{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
                 ", number='" + number + '\'' +
                 '}';
     }
@@ -56,7 +35,7 @@ public class Person {
         Person person = (Person) o;
 
         if (id != person.id) return false;
-        if (name != null ? !name.equals(person.name) : person.name != null) return false;
+        if (firstName != null ? !firstName.equals(person.firstName) : person.firstName != null) return false;
         if (number != null ? !number.equals(person.number) : person.number != null) return false;
 
         return true;
@@ -65,8 +44,24 @@ public class Person {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (number != null ? number.hashCode() : 0);
         return result;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getNumber() {
+        return number;
     }
 }
