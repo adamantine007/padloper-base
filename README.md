@@ -19,23 +19,8 @@ Also I used `json2.js` file created by [douglascrockford](https://github.com/dou
 
 How to run?
 ----------------
-So, if you interest in running this application all what you need
- 
-What are you can?
-----------------
-An application has next CRUD operations: 
-- add person
-- select person
-- update information about person
-- delete person
+So, if you interest in running this application, all what you need - clone this project, open with some development tool
+like Intellij IDEA or Eclipse, then plug in all `.jar` files from `/lib` folder and run main method from `Launcher.java`.
+An application works using Jetty App Server in embedded mode, so you do not need to build any `.war` files and then deploy it.
+I use this way cause it's fast to do some modification and you don't spent your time.It's very helpful went you study and just develop without deploy.
 
-
-Communication with DB based on Java Servlets + Ajax.
-
-A client have 4 section on one HTML page: add, select, delete person and commit DB. When client commit DB, all data convert to JSON format and stored in the **data.json** file.
-
-Unfortunately, if client didn't commit before undeploy `.war` file, changes after last commit will not save.
- 
-Propositions
-----------------
-If you have some offer to change code, or to add some feature, please contact me.
