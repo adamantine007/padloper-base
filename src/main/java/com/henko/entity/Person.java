@@ -1,5 +1,12 @@
 package com.henko.entity;
 
+/**
+ * Simple class. Each object stores information about
+ * certain Person, has four private fields - ID, first name, second name, phone number.
+ *
+ * @author Ruslan Kurchenko
+ */
+
 public class Person {
     private int id;
     private String firstName;
