@@ -78,7 +78,7 @@
         return false;
     };
 
-    /* PROCESS REMOVE FORM */
+    /* PROCESS COMMIT FORM */
     var commitForm = document.getElementById("commitForm");
 
     commitForm.onsubmit = function () {
