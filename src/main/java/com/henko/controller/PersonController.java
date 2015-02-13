@@ -15,7 +15,7 @@ import java.io.IOException;
 
 
 /**
- * Controller that process four types of requests for inner data bae: add, get, remove, commit.
+ * Controller that process four types of requests for inner database: add, get, remove, commit.
  * This servlet created to process POST requests, all GET requests redirects to PAGE_ERROR.
  * Also this servlet uses Gson library to convert entity to JSON format.
  *
