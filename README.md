@@ -1,4 +1,4 @@
-#PHONE BOOK
+#Padloper Base
 
 ####Description
 It is a simple WEB application based on Servlet API and AJAX technologies. Users can save phone book records to database.
